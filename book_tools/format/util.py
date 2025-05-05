@@ -18,7 +18,7 @@ def minify_cover(path):
     #     if width > 600:
     #         new_width = 500
     #         new_height = int(float(new_width) * image.size[1] / width)
-    #         image.thumbnail((new_width, new_height), Image.ANTIALIAS)
+    #         image.thumbnail((new_width, new_height), Image.LANCZOS)
     #     ImageFile.MAXBLOCK = image.size[0] * image.size[1]
     #     image.save(path, 'JPEG', optimize=True, progressive=True)
     # except:
