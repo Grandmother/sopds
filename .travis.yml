@@ -3,12 +3,7 @@ python:
     - 3.6
     - 3.9
 
-env:
-    - DJANGO='django>=1.11,<2.0'
-    - DJANGO='django>=2.2,<2.3'
-
 install:
-    - travis_retry pip install $DJANGO
     - travis_retry pip install -r requirements.txt
 
 script:
