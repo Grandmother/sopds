@@ -119,12 +119,8 @@ WSGI_APPLICATION = 'sopds.wsgi.application'
 
 DATABASES = {
     'default': {
-    'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    'NAME': os.environ["DB_NAME"],
-    'USER': os.environ["DB_USER"],
-    'PASSWORD': os.environ["DB_PASS"],
-    'HOST': os.environ["DB_HOST"], # Set to empty string for localhost.
-    'PORT': os.environ["DB_PORT"], # Set to empty string for default.
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -155,7 +151,8 @@ LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'sopds/locale'),
 )
 
-TIME_ZONE = os.environ["TIME_ZONE"]
+DEFAULT_TIME_ZONE = 'Europe/Berlin'
+TIME_ZONE = os.environ.get("TIME_ZONE", DEFAULT_TIME_ZONE)
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
